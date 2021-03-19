@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body align="center">
+    <h5>Kalkulator</h5>
+    <input type="number" id="angka1">
+    <select id="hitung">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="angka2">
+    <br/><br/>
+    <input type="text" id="hasil">
+    <br/><br/>
+    <input type="submit" onclick="kalkulator()" value="=">
+    <button type="reset"  onclick="reset()" id="reset">C</button>
+    <script>
+        function kalkulator(){
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            var hitung = document.getElementById("hitung").value;
+            var hasil = document.getElementById("hasil");
+            var reset = document.getElementById('reset');
+            var total;
+                if (hitung == "+") {
+                    total = angka1 + angka2;
+                } else if (hitung == "-") {
+                    total = angka1 - angka2;
+                } else if (hitung == "*") {
+                    total = angka1 * angka2;
+                } else {
+                    total = angka1 / angka2;
+                }
+
+                hasil.value = total;
+        }
+        function reset(){
+            document.getElementById('angka1').value='';
+            document.getElementById('angka2').value='';
+            document.getElementById('hasil').value='';
+        }
+    </script>
+</body>
+</html>
